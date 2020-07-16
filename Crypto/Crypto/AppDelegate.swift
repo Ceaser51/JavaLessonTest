@@ -1,4 +1,8 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+
+    func appli
