@@ -10,4 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // MARK: UISceneSessio
+    // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplicat
