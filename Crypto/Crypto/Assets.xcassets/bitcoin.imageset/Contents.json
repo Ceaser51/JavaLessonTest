@@ -10,4 +10,7 @@
       "scale" : "2x"
     },
     {
-      "idiom
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
