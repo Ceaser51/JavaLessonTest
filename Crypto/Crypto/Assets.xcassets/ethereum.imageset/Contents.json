@@ -2,4 +2,5 @@
   "images" : [
     {
       "idiom" : "universal",
-      "fil
+      "filename" : "ethereum.png",
+      "scale" : "1x"
