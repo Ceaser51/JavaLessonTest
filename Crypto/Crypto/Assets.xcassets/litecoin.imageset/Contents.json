@@ -2,4 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "litecoin.
+      "filename" : "litecoin.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom"
