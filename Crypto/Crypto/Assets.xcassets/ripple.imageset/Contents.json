@@ -3,4 +3,8 @@
     {
       "idiom" : "universal",
       "filename" : "ripple.png",
-      "scale" : "1
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" 
