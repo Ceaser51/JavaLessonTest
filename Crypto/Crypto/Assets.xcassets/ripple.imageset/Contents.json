@@ -11,4 +11,8 @@
     },
     {
       "idiom" : "universal",
-      "sc
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
