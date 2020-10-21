@@ -15,4 +15,7 @@
     }
   ],
   "info" : {
-    "versi
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
