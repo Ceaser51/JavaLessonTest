@@ -1,3 +1,6 @@
 import SwiftUI
 
-struct GraphCoin:
+struct GraphCoin: View {
+    
+    let title: String
+    let lineCoordinates
