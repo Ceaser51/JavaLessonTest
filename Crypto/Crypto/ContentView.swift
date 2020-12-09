@@ -6,4 +6,4 @@ struct GraphCoin: View {
     let lineCoordinates: [CGFloat]
     
     var body: some  View {
-      
+        LineChartController(lineCoordinates: lineCoordina
