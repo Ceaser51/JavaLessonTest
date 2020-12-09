@@ -3,4 +3,7 @@ import SwiftUI
 struct GraphCoin: View {
     
     let title: String
-    let lineCoordinates
+    let lineCoordinates: [CGFloat]
+    
+    var body: some  View {
+      
