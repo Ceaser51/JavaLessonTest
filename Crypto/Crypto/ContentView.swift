@@ -8,4 +8,7 @@ struct GraphCoin: View {
     var body: some  View {
         LineChartController(lineCoordinates: lineCoordinates, inline: false)
             .padding(.leading, 30)
-        .na
+        .navigationBarTitle(Text(title))
+    }
+}
+
