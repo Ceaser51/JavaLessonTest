@@ -12,3 +12,6 @@ struct GraphCoin: View {
     }
 }
 
+
+struct Coin: Identifiable {
+    let id, name, price, icon: Strin
