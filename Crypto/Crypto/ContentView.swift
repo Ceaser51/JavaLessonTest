@@ -14,4 +14,8 @@ struct GraphCoin: View {
 
 
 struct Coin: Identifiable {
-    let id, name, price, icon: Strin
+    let id, name, price, icon: String
+    let lineCoordinates: [CGFloat]
+}
+
+struct ContentView: V
