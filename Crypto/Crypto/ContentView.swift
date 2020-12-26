@@ -21,4 +21,4 @@ struct Coin: Identifiable {
 struct ContentView: View {
     
     var rates : [Coin] = [
-        Coin(id: "BT
+        Coin(id: "BTC", name: "Bitcoin", price: "9733.95", icon: "bitcoin", 
