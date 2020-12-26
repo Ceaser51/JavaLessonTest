@@ -18,4 +18,7 @@ struct Coin: Identifiable {
     let lineCoordinates: [CGFloat]
 }
 
-struct ContentView: V
+struct ContentView: View {
+    
+    var rates : [Coin] = [
+        Coin(id: "BT
