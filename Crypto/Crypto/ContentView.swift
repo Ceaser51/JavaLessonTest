@@ -25,4 +25,4 @@ struct ContentView: View {
         Coin(id: "LTC", name: "Litecoin", price: "78.70", icon: "litecoin", lineCoordinates: [20,10,40,70,50,60,30]),
         Coin(id: "XRP", name: "Ripple", price: "0.30", icon: "ripple", lineCoordinates: [2.0,1.0,4.0,7.0,5.0,6.0,3.0]),
         Coin(id: "TRX", name: "Tron", price: "0.02", icon: "tron", lineCoordinates: [0.12,0.41,0.74,0.37,0.15,0.96,0.23]),
-        Coin(id: "ETH", name: "Ethereum", price
+        Coin(id: "ETH", name: "Ethereum", price: "78.70", icon: "ethereum", lineCoordinates: [20.0
