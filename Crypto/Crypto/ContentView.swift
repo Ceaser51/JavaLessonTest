@@ -28,4 +28,5 @@ struct ContentView: View {
         Coin(id: "ETH", name: "Ethereum", price: "78.70", icon: "ethereum", lineCoordinates: [20.00,10.00,40.00,70.00,50.00,60.00,30.0])
     ]
     
-    
+    var myWallet: [Coin] = [
+    Coin(id: "BTC", name: "Bitcoin", pri
