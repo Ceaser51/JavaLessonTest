@@ -29,4 +29,4 @@ struct ContentView: View {
     ]
     
     var myWallet: [Coin] = [
-    Coin(id: "BTC", name: "Bitcoin", pri
+    Coin(id: "BTC", name: "Bitcoin", price: "1000.0", icon: "bitcoin", lineCoordinates: [2000,100
