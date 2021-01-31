@@ -37,4 +37,8 @@ struct ContentView: View {
     
     var body: some View {
         
-        NavigationVi
+        NavigationView {
+            
+            VStack {
+
+                LineChartContr
