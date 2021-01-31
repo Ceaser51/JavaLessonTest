@@ -35,4 +35,6 @@ struct ContentView: View {
         lineCoordinates: [0.02,0.01,0.04,0.07,0.05,0.06,0.03]),
     ]
     
-    var
+    var body: some View {
+        
+        NavigationVi
