@@ -41,4 +41,5 @@ struct ContentView: View {
             
             VStack {
 
-                LineChartContr
+                LineChartController(lineCoordinates: [3,2,6], inline: true)
+        
