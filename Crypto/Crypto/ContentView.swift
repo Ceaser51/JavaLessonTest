@@ -43,4 +43,6 @@ struct ContentView: View {
 
                 LineChartController(lineCoordinates: [3,2,6], inline: true)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 150)
-                    .padding(
+                    .padding()
+                
+                Text("Your crypto balance")
