@@ -42,4 +42,4 @@ struct ContentView: View {
             VStack {
 
                 LineChartController(lineCoordinates: [3,2,6], inline: true)
-        
+                    .frame(minWidth: 0, maxWidth: .infinity, 
