@@ -46,3 +46,5 @@ struct ContentView: View {
                     .padding()
                 
                 Text("Your crypto balance")
+                Text("$3133.7")
+                    .fon
