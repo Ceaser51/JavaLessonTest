@@ -49,4 +49,7 @@ struct ContentView: View {
                 Text("$3133.7")
                     .fontWeight(.heavy)
                     .font(.largeTitle)
-        
+                
+                List {
+                    
+ 
