@@ -47,4 +47,6 @@ struct ContentView: View {
                 
                 Text("Your crypto balance")
                 Text("$3133.7")
-                    .fon
+                    .fontWeight(.heavy)
+                    .font(.largeTitle)
+        
