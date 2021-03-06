@@ -52,4 +52,5 @@ struct ContentView: View {
                 
                 List {
                     
- 
+                    Section(header: Text("My Wallet")) {
+  
