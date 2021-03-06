@@ -54,4 +54,5 @@ struct ContentView: View {
                     
                     Section(header: Text("My Wallet")) {
                         ForEach(myWallet) { coin in
-          
+                            HStack {
+                                Ima
