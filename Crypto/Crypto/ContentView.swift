@@ -64,4 +64,6 @@ struct ContentView: View {
                                 Text(coin.price).fontWeight(.bold)
                             }
                         }
-            
+                    }
+                    
+                    Se
