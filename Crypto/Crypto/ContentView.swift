@@ -66,4 +66,5 @@ struct ContentView: View {
                         }
                     }
                     
-                    Se
+                    Section(header: Text("Current Prices")) {
+               
