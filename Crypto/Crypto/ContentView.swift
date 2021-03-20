@@ -67,4 +67,5 @@ struct ContentView: View {
                     }
                     
                     Section(header: Text("Current Prices")) {
-               
+                        ForEach(rates) { coin in
+                      
