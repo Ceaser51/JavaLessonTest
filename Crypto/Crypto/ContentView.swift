@@ -69,4 +69,6 @@ struct ContentView: View {
                     Section(header: Text("Current Prices")) {
                         ForEach(rates) { coin in
                             
-                            NavigationLink(destination: GraphCoin(title: coin.name, lineCoordinates: co
+                            NavigationLink(destination: GraphCoin(title: coin.name, lineCoordinates: coin.lineCoordinates)) {
+
+                 
