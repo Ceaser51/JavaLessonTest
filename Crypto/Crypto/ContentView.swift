@@ -71,4 +71,5 @@ struct ContentView: View {
                             
                             NavigationLink(destination: GraphCoin(title: coin.name, lineCoordinates: coin.lineCoordinates)) {
 
-                 
+                                HStack {
+                        
