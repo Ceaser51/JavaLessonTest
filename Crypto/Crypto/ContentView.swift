@@ -73,4 +73,5 @@ struct ContentView: View {
 
                                 HStack {
                                     Image(coin.icon)
-          
+                                        .resizable()
+         
