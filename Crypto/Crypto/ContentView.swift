@@ -75,4 +75,5 @@ struct ContentView: View {
                                     Image(coin.icon)
                                         .resizable()
                                         .frame(width: 30, height: 30, alignment: .leading)
-        
+                                    
+                               
