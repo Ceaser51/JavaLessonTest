@@ -76,4 +76,5 @@ struct ContentView: View {
                                         .resizable()
                                         .frame(width: 30, height: 30, alignment: .leading)
                                     
-                               
+                                    Text("\(coin.name) (\(coin.id))")
+      
