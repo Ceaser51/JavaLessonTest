@@ -78,4 +78,6 @@ struct ContentView: View {
                                     
                                     Text("\(coin.name) (\(coin.id))")
                                     Spacer()
-                                    Text(coin.price).fontWeight(.
+                                    Text(coin.price).fontWeight(.bold)
+                                }
+                 
