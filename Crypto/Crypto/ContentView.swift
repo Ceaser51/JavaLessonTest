@@ -80,4 +80,7 @@ struct ContentView: View {
                                     Spacer()
                                     Text(coin.price).fontWeight(.bold)
                                 }
-                 
+                            }
+                        }
+                    }
+ 
