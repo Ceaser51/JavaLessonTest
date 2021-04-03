@@ -83,4 +83,5 @@ struct ContentView: View {
                             }
                         }
                     }
- 
+                }.listStyle(GroupedListStyle())
+            
