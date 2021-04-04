@@ -88,4 +88,9 @@ struct ContentView: View {
             
             .navigationBarTitle(Text("Dashboard"))
             .navigationBarHidden(true)
+        }
         
+    }
+}
+
+struct ContentView_Previews: Preview
