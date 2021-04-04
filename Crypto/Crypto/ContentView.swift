@@ -84,4 +84,6 @@ struct ContentView: View {
                         }
                     }
                 }.listStyle(GroupedListStyle())
+            }
             
+            .navigationBarTitle(Tex
