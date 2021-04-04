@@ -86,4 +86,6 @@ struct ContentView: View {
                 }.listStyle(GroupedListStyle())
             }
             
-            .navigationBarTitle(Tex
+            .navigationBarTitle(Text("Dashboard"))
+            .navigationBarHidden(true)
+        
