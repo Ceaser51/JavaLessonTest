@@ -93,4 +93,5 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: Preview
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some Vi
