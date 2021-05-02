@@ -29,4 +29,5 @@
 			<key>UIWindowSceneSessionRoleApplication</key>
 			<array>
 				<dict>
-					<key>UISceneConf
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
