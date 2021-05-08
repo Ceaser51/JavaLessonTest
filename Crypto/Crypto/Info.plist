@@ -37,4 +37,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UILaunchStoryboardName</
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapa
