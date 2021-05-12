@@ -45,4 +45,5 @@
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOr
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientatio
