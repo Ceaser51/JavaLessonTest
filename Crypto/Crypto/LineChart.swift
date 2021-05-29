@@ -65,3 +65,47 @@ open class LineChart: UIView {
         public var grid: Grid = Grid()
         public var axis: Axis = Axis()
         
+        // private
+        fileprivate var linear: LinearScale!
+        fileprivate var scale: ((CGFloat) -> CGFloat)!
+        fileprivate var invert: ((CGFloat) -> CGFloat)!
+        fileprivate var ticks: (CGFloat, CGFloat, CGFloat)!
+    }
+    
+    public struct Animation {
+        public var enabled: Bool = true
+        public var duration: CFTimeInterval = 1
+    }
+    
+    public struct Dots {
+        public var visible: Bool = true
+        public var color: UIColor = UIColor.white
+        public var innerRadius: CGFloat = 8
+        public var outerRadius: CGFloat = 12
+        public var innerRadiusHighlighted: CGFloat = 8
+        public var outerRadiusHighlighted: CGFloat = 12
+    }
+    
+    // default configuration
+    open var area: Bool = true
+    open var animation: Animation = Animation()
+    open var dots: Dots = Dots()
+    open var lineWidth: CGFloat = 2
+    
+    open var x: Coordinate = Coordinate()
+    open var y: Coordinate = Coordinate()
+    
+    
+    // values calculated on init
+    fileprivate var drawingHeight: CGFloat = 0 {
+        didSet {
+            let max = getMaximumValue()
+            let min = getMinimumValue()
+            y.linear = LinearScale(domain: [min, max], range: [0, drawingHeight])
+            y.scale = y.linear.scale()
+            y.ticks = y.linear.ticks(Int(y.grid.count))
+        }
+    }
+    fileprivate var drawingWidth: CGFloat = 0 {
+        didSet {
+            let data = dataStore[0]
