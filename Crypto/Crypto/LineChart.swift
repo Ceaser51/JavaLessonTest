@@ -109,3 +109,58 @@ open class LineChart: UIView {
     fileprivate var drawingWidth: CGFloat = 0 {
         didSet {
             let data = dataStore[0]
+            x.linear = LinearScale(domain: [0.0, CGFloat(data.count - 1)], range: [0, drawingWidth])
+            x.scale = x.linear.scale()
+            x.invert = x.linear.invert()
+            x.ticks = x.linear.ticks(Int(x.grid.count))
+        }
+    }
+    
+    open var delegate: LineChartDelegate?
+    
+    // data stores
+    fileprivate var dataStore: [[CGFloat]] = []
+    fileprivate var dotsDataStore: [[DotCALayer]] = []
+    fileprivate var lineLayerStore: [CAShapeLayer] = []
+    
+    fileprivate var removeAll: Bool = false
+    
+    // category10 colors from d3 - https://github.com/mbostock/d3/wiki/Ordinal-Scales
+    open var colors: [UIColor] = [
+        UIColor(red: 0.121569, green: 0.466667, blue: 0.705882, alpha: 1),
+        UIColor(red: 1, green: 0.498039, blue: 0.054902, alpha: 1),
+        UIColor(red: 0.172549, green: 0.627451, blue: 0.172549, alpha: 1),
+        UIColor(red: 0.839216, green: 0.152941, blue: 0.156863, alpha: 1),
+        UIColor(red: 0.580392, green: 0.403922, blue: 0.741176, alpha: 1),
+        UIColor(red: 0.54902, green: 0.337255, blue: 0.294118, alpha: 1),
+        UIColor(red: 0.890196, green: 0.466667, blue: 0.760784, alpha: 1),
+        UIColor(red: 0.498039, green: 0.498039, blue: 0.498039, alpha: 1),
+        UIColor(red: 0.737255, green: 0.741176, blue: 0.133333, alpha: 1),
+        UIColor(red: 0.0901961, green: 0.745098, blue: 0.811765, alpha: 1)
+    ]
+    
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.clear
+    }
+    
+    convenience init() {
+        self.init(frame: CGRect.zero)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override open func draw(_ rect: CGRect) {
+        
+        if removeAll {
+            let context = UIGraphicsGetCurrentContext()
+            context?.clear(rect)
+            return
+        }
+        
+        self.drawingHeight = self.bounds.height - (2 * y.axis.inset)
+        self.drawingWidth = self.bounds.width - (2 * x.axis.inset)
+        
+        // remove all labels
