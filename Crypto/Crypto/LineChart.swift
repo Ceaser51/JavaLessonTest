@@ -164,3 +164,41 @@ open class LineChart: UIView {
         self.drawingWidth = self.bounds.width - (2 * x.axis.inset)
         
         // remove all labels
+        for view: AnyObject in self.subviews {
+            view.removeFromSuperview()
+        }
+        
+        // remove all lines on device rotation
+        for lineLayer in lineLayerStore {
+            lineLayer.removeFromSuperlayer()
+        }
+        lineLayerStore.removeAll()
+        
+        // remove all dots on device rotation
+        for dotsData in dotsDataStore {
+            for dot in dotsData {
+                dot.removeFromSuperlayer()
+            }
+        }
+        dotsDataStore.removeAll()
+        
+        // draw grid
+        if x.grid.visible && y.grid.visible { drawGrid() }
+        
+        // draw axes
+        if x.axis.visible && y.axis.visible { drawAxes() }
+        
+        // draw labels
+        if x.labels.visible { drawXLabels() }
+        if y.labels.visible { drawYLabels() }
+        
+        // draw lines
+        for (lineIndex, _) in dataStore.enumerated() {
+            
+            drawLine(lineIndex)
+            
+            // draw dots
+            if dots.visible { drawDataDots(lineIndex) }
+            
+            // draw area under line chart
+            if area { drawAreaBeneathLineChart(lineIndex) }
