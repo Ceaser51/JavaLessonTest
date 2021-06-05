@@ -202,3 +202,61 @@ open class LineChart: UIView {
             
             // draw area under line chart
             if area { drawAreaBeneathLineChart(lineIndex) }
+            
+        }
+        
+    }
+    
+    
+    
+    /**
+     * Get y value for given x value. Or return zero or maximum value.
+     */
+    fileprivate func getYValuesForXValue(_ x: Int) -> [CGFloat] {
+        var result: [CGFloat] = []
+        for lineData in dataStore {
+            if x < 0 {
+                result.append(lineData[0])
+            } else if x > lineData.count - 1 {
+                result.append(lineData[lineData.count - 1])
+            } else {
+                result.append(lineData[x])
+            }
+        }
+        return result
+    }
+    
+    
+    
+    /**
+     * Handle touch events.
+     */
+    fileprivate func handleTouchEvents(_ touches: NSSet!, event: UIEvent) {
+        if (self.dataStore.isEmpty) {
+            return
+        }
+        let point: AnyObject! = touches.anyObject() as! AnyObject
+        let xValue = point.location(in: self).x
+        let inverted = self.x.invert(xValue - x.axis.inset)
+        let rounded = Int(round(Double(inverted)))
+        let yValues: [CGFloat] = getYValuesForXValue(rounded)
+        highlightDataPoints(rounded)
+        delegate?.didSelectDataPoint(CGFloat(rounded), yValues: yValues)
+    }
+    
+    
+    
+    /**
+     * Listen on touch end event.
+     */
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        handleTouchEvents(touches as! NSSet, event: event!)
+    }
+    
+    
+    
+    /**
+     * Listen on touch move event
+     */
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        handleTouchEvents(touches as! NSSet, event: event!)
