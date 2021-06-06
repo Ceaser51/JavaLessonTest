@@ -315,3 +315,60 @@ open class LineChart: UIView {
                 anim.duration = animation.duration
                 anim.fromValue = 0
                 anim.toValue = 1
+                dotLayer.add(anim, forKey: "opacity")
+            }
+            
+        }
+        dotsDataStore.append(dotLayers)
+    }
+    
+    
+    
+    /**
+     * Draw x and y axis.
+     */
+    fileprivate func drawAxes() {
+        let height = self.bounds.height
+        let width = self.bounds.width
+        let path = UIBezierPath()
+        // draw x-axis
+        x.axis.color.setStroke()
+        let y0 = height - self.y.scale(0) - y.axis.inset
+        path.move(to: CGPoint(x: x.axis.inset, y: y0))
+        path.addLine(to: CGPoint(x: width - x.axis.inset, y: y0))
+        path.stroke()
+        // draw y-axis
+        y.axis.color.setStroke()
+        path.move(to: CGPoint(x: x.axis.inset, y: height - y.axis.inset))
+        path.addLine(to: CGPoint(x: x.axis.inset, y: y.axis.inset))
+        path.stroke()
+    }
+    
+    
+    
+    /**
+     * Get maximum value in all arrays in data store.
+     */
+    fileprivate func getMaximumValue() -> CGFloat {
+        var max: CGFloat = 1
+        for data in dataStore {
+            let newMax = data.max()!
+            if newMax > max {
+                max = newMax
+            }
+        }
+        return max
+    }
+    
+    
+    
+    /**
+     * Get maximum value in all arrays in data store.
+     */
+    fileprivate func getMinimumValue() -> CGFloat {
+        var min: CGFloat = 0
+        for data in dataStore {
+            let newMin = data.min()!
+            if newMin < min {
+                min = newMin
+            }
