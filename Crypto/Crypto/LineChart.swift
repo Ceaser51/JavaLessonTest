@@ -260,3 +260,58 @@ open class LineChart: UIView {
      */
     override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         handleTouchEvents(touches as! NSSet, event: event!)
+    }
+    
+    
+    
+    /**
+     * Highlight data points at index.
+     */
+    fileprivate func highlightDataPoints(_ index: Int) {
+        for (lineIndex, dotsData) in dotsDataStore.enumerated() {
+            // make all dots white again
+            for dot in dotsData {
+                dot.backgroundColor = dots.color.cgColor
+            }
+            // highlight current data point
+            var dot: DotCALayer
+            if index < 0 {
+                dot = dotsData[0]
+            } else if index > dotsData.count - 1 {
+                dot = dotsData[dotsData.count - 1]
+            } else {
+                dot = dotsData[index]
+            }
+            dot.backgroundColor = Helpers.lightenUIColor(colors[lineIndex]).cgColor
+        }
+    }
+    
+    
+    
+    /**
+     * Draw small dot at every data point.
+     */
+    fileprivate func drawDataDots(_ lineIndex: Int) {
+        var dotLayers: [DotCALayer] = []
+        var data = self.dataStore[lineIndex]
+        
+        for index in 0..<data.count {
+            let xValue = self.x.scale(CGFloat(index)) + x.axis.inset - dots.outerRadius/2
+            let yValue = self.bounds.height - self.y.scale(data[index]) - y.axis.inset - dots.outerRadius/2
+            
+            // draw custom layer with another layer in the center
+            let dotLayer = DotCALayer()
+            dotLayer.dotInnerColor = colors[lineIndex]
+            dotLayer.innerRadius = dots.innerRadius
+            dotLayer.backgroundColor = dots.color.cgColor
+            dotLayer.cornerRadius = dots.outerRadius / 2
+            dotLayer.frame = CGRect(x: xValue, y: yValue, width: dots.outerRadius, height: dots.outerRadius)
+            self.layer.addSublayer(dotLayer)
+            dotLayers.append(dotLayer)
+            
+            // animate opacity
+            if animation.enabled {
+                let anim = CABasicAnimation(keyPath: "opacity")
+                anim.duration = animation.duration
+                anim.fromValue = 0
+                anim.toValue = 1
