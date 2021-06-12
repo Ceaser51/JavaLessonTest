@@ -372,3 +372,43 @@ open class LineChart: UIView {
             if newMin < min {
                 min = newMin
             }
+        }
+        return min
+    }
+    
+    
+    
+    /**
+     * Draw line.
+     */
+    fileprivate func drawLine(_ lineIndex: Int) {
+        
+        var data = self.dataStore[lineIndex]
+        let path = UIBezierPath()
+        
+        var xValue = self.x.scale(0) + x.axis.inset
+        var yValue = self.bounds.height - self.y.scale(data[0]) - y.axis.inset
+        path.move(to: CGPoint(x: xValue, y: yValue))
+        for index in 1..<data.count {
+            xValue = self.x.scale(CGFloat(index)) + x.axis.inset
+            yValue = self.bounds.height - self.y.scale(data[index]) - y.axis.inset
+            path.addLine(to: CGPoint(x: xValue, y: yValue))
+        }
+        
+        let layer = CAShapeLayer()
+        layer.frame = self.bounds
+        layer.path = path.cgPath
+        layer.strokeColor = colors[lineIndex].cgColor
+        layer.fillColor = nil
+        layer.lineWidth = lineWidth
+        self.layer.addSublayer(layer)
+        
+        // animate line drawing
+        if animation.enabled {
+            let anim = CABasicAnimation(keyPath: "strokeEnd")
+            anim.duration = animation.duration
+            anim.fromValue = 0
+            anim.toValue = 1
+            layer.add(anim, forKey: "strokeEnd")
+        }
+        
