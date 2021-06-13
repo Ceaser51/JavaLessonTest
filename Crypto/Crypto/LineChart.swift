@@ -412,3 +412,58 @@ open class LineChart: UIView {
             layer.add(anim, forKey: "strokeEnd")
         }
         
+        // add line layer to store
+        lineLayerStore.append(layer)
+    }
+    
+    
+    
+    /**
+     * Fill area between line chart and x-axis.
+     */
+    fileprivate func drawAreaBeneathLineChart(_ lineIndex: Int) {
+        
+        var data = self.dataStore[lineIndex]
+        let path = UIBezierPath()
+        
+        colors[lineIndex].withAlphaComponent(0.2).setFill()
+        // move to origin
+        path.move(to: CGPoint(x: x.axis.inset, y: self.bounds.height - self.y.scale(0) - y.axis.inset))
+        // add line to first data point
+        path.addLine(to: CGPoint(x: x.axis.inset, y: self.bounds.height - self.y.scale(data[0]) - y.axis.inset))
+        // draw whole line chart
+        for index in 1..<data.count {
+            let x1 = self.x.scale(CGFloat(index)) + x.axis.inset
+            let y1 = self.bounds.height - self.y.scale(data[index]) - y.axis.inset
+            path.addLine(to: CGPoint(x: x1, y: y1))
+        }
+        // move down to x axis
+        path.addLine(to: CGPoint(x: self.x.scale(CGFloat(data.count - 1)) + x.axis.inset, y: self.bounds.height - self.y.scale(0) - y.axis.inset))
+        // move to origin
+        path.addLine(to: CGPoint(x: x.axis.inset, y: self.bounds.height - self.y.scale(0) - y.axis.inset))
+        path.fill()
+    }
+    
+    
+    
+    /**
+     * Draw x grid.
+     */
+    fileprivate func drawXGrid() {
+        x.grid.color.setStroke()
+        let path = UIBezierPath()
+        var x1: CGFloat
+        let y1: CGFloat = self.bounds.height - y.axis.inset
+        let y2: CGFloat = y.axis.inset
+        let (start, stop, step) = self.x.ticks
+        for i in stride(from: start, through: stop, by: step){
+            x1 = self.x.scale(i) + x.axis.inset
+            path.move(to: CGPoint(x: x1, y: y1))
+            path.addLine(to: CGPoint(x: x1, y: y2))
+        }
+        path.stroke()
+    }
+    
+    
+    
+    /**
