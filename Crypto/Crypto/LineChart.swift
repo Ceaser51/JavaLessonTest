@@ -531,3 +531,66 @@ open class LineChart: UIView {
         let (start, stop, step) = self.y.ticks
         for i in stride(from: start, through: stop, by: step){
             yValue = self.bounds.height - self.y.scale(i) - (y.axis.inset * 1.5)
+            let label = UILabel(frame: CGRect(x: -25, y: yValue, width: (y.axis.inset*2.5), height: y.axis.inset))
+            
+            label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+            label.textAlignment = .center
+            label.text = String(Int(round(i)))
+            self.addSubview(label)
+        }
+    }
+    
+    
+    
+    /**
+     * Add line chart
+     */
+    open func addLine(_ data: [CGFloat]) {
+        self.dataStore.append(data)
+        self.setNeedsDisplay()
+    }
+    
+    
+    
+    /**
+     * Make whole thing white again.
+     */
+    open func clearAll() {
+        self.removeAll = true
+        clear()
+        self.setNeedsDisplay()
+        self.removeAll = false
+    }
+    
+    
+    
+    /**
+     * Remove charts, areas and labels but keep axis and grid.
+     */
+    open func clear() {
+        // clear data
+        dataStore.removeAll()
+        self.setNeedsDisplay()
+    }
+}
+
+
+
+/**
+ * DotCALayer
+ */
+class DotCALayer: CALayer {
+    
+    var innerRadius: CGFloat = 8
+    var dotInnerColor = UIColor.black
+    
+    override init() {
+        super.init()
+    }
+    
+    override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
