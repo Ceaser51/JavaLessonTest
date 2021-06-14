@@ -467,3 +467,67 @@ open class LineChart: UIView {
     
     
     /**
+     * Draw y grid.
+     */
+    fileprivate func drawYGrid() {
+        self.y.grid.color.setStroke()
+        let path = UIBezierPath()
+        let x1: CGFloat = x.axis.inset
+        let x2: CGFloat = self.bounds.width - x.axis.inset
+        var y1: CGFloat
+        let (start, stop, step) = self.y.ticks
+        for i in stride(from: start, through: stop, by: step){
+            y1 = self.bounds.height - self.y.scale(i) - y.axis.inset
+            path.move(to: CGPoint(x: x1, y: y1))
+            path.addLine(to: CGPoint(x: x2, y: y1))
+        }
+        path.stroke()
+    }
+    
+    
+    
+    /**
+     * Draw grid.
+     */
+    fileprivate func drawGrid() {
+        drawXGrid()
+        drawYGrid()
+    }
+    
+    
+    
+    /**
+     * Draw x labels.
+     */
+    fileprivate func drawXLabels() {
+        let xAxisData = self.dataStore[0]
+        let y = self.bounds.height - x.axis.inset
+        let (_, _, step) = x.linear.ticks(xAxisData.count)
+        let width = x.scale(step)
+        
+        var text: String
+        for (index, _) in xAxisData.enumerated() {
+            let xValue = self.x.scale(CGFloat(index)) + x.axis.inset - (width / 2)
+            let label = UILabel(frame: CGRect(x: xValue, y: y, width: width, height: x.axis.inset))
+            label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+            label.textAlignment = .center
+            if (x.labels.values.count != 0) {
+                text = x.labels.values[index]
+            } else {
+                text = String(index)
+            }
+            label.text = text
+            self.addSubview(label)
+        }
+    }
+    
+    
+    
+    /**
+     * Draw y labels.
+     */
+    fileprivate func drawYLabels() {
+        var yValue: CGFloat
+        let (start, stop, step) = self.y.ticks
+        for i in stride(from: start, through: stop, by: step){
+            yValue = self.bounds.height - self.y.scale(i) - (y.axis.inset * 1.5)
