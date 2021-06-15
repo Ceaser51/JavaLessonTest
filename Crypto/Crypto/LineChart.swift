@@ -594,3 +594,58 @@ class DotCALayer: CALayer {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func layoutSublayers() {
+        super.layoutSublayers()
+        let inset = self.bounds.size.width - innerRadius
+        let innerDotLayer = CALayer()
+        innerDotLayer.frame = self.bounds.insetBy(dx: inset/2, dy: inset/2)
+        innerDotLayer.backgroundColor = dotInnerColor.cgColor
+        innerDotLayer.cornerRadius = innerRadius / 2
+        self.addSublayer(innerDotLayer)
+    }
+    
+}
+
+
+
+/**
+ * LinearScale
+ */
+open class LinearScale {
+    
+    var domain: [CGFloat]
+    var range: [CGFloat]
+    
+    public init(domain: [CGFloat] = [0, 1], range: [CGFloat] = [0, 1]) {
+        self.domain = domain
+        self.range = range
+    }
+    
+    open func scale() -> (_ x: CGFloat) -> CGFloat {
+        return bilinear(domain, range: range, uninterpolate: uninterpolate, interpolate: interpolate)
+    }
+    
+    open func invert() -> (_ x: CGFloat) -> CGFloat {
+        return bilinear(range, range: domain, uninterpolate: uninterpolate, interpolate: interpolate)
+    }
+    
+    open func ticks(_ m: Int) -> (CGFloat, CGFloat, CGFloat) {
+        return scale_linearTicks(domain, m: m)
+    }
+    
+    fileprivate func scale_linearTicks(_ domain: [CGFloat], m: Int) -> (CGFloat, CGFloat, CGFloat) {
+        return scale_linearTickRange(domain, m: m)
+    }
+    
+    fileprivate func scale_linearTickRange(_ domain: [CGFloat], m: Int) -> (CGFloat, CGFloat, CGFloat) {
+        var extent = scaleExtent(domain)
+        let span = extent[1] - extent[0]
+        var step = CGFloat(pow(10, floor(log(Double(span) / Double(m)) / M_LN10)))
+        let err = CGFloat(m) / span * step
+        
+        // Filter ticks to get closer to the desired count.
+        if (err <= 0.15) {
+            step *= 10
+        } else if (err <= 0.35) {
