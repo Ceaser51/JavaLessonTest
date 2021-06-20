@@ -3,4 +3,7 @@ import UIKit
 
 struct LineChartController: UIViewRepresentable {
     
-    let lineCoordinates: [CGFlo
+    let lineCoordinates: [CGFloat]
+    let inline: Bool
+    
+    func upd
