@@ -1,4 +1,6 @@
 import SwiftUI
 import UIKit
 
-struct LineChartController: UIView
+struct LineChartController: UIViewRepresentable {
+    
+    let lineCoordinates: [CGFlo
