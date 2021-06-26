@@ -15,4 +15,5 @@ struct LineChartController: UIViewRepresentable {
         lineChart.addLine(lineCoordinates)
         
         if inline {
-  
+            lineChart.y.labels.visible = false
+            
