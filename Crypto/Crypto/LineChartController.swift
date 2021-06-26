@@ -16,4 +16,4 @@ struct LineChartController: UIViewRepresentable {
         
         if inline {
             lineChart.y.labels.visible = false
-            
+            lineChart.x.labels.values = ["Yesterday", "T
