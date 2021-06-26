@@ -11,3 +11,5 @@ struct LineChartController: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> LineChart {
+        let lineChart = LineChart()
+       
