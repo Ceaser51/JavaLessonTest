@@ -20,4 +20,7 @@ struct LineChartController: UIViewRepresentable {
         } else {
             lineChart.x.labels.values = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"]
         }
-        retur
+        return lineChart
+        
+    }
+}
