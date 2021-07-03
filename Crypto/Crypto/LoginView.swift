@@ -3,4 +3,7 @@ import Combine
 
 
 struct ServerMessage: Decodable {
-    let status, message:
+    let status, message: String
+}
+
+class HttpAuth: ObservableObject 
