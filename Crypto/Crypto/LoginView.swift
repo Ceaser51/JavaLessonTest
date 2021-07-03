@@ -6,4 +6,6 @@ struct ServerMessage: Decodable {
     let status, message: String
 }
 
-class HttpAuth: ObservableObject 
+class HttpAuth: ObservableObject {
+    
+    var didChange = PassthroughSubject<HttpA
