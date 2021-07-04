@@ -8,4 +8,7 @@ struct ServerMessage: Decodable {
 
 class HttpAuth: ObservableObject {
     
-    var didChange = PassthroughSubject<HttpA
+    var didChange = PassthroughSubject<HttpAuth, Never>()
+    
+    var authenticated = false {
+        didSet
