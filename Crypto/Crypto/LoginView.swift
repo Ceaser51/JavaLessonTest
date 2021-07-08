@@ -11,4 +11,9 @@ class HttpAuth: ObservableObject {
     var didChange = PassthroughSubject<HttpAuth, Never>()
     
     var authenticated = false {
-        didSet
+        didSet {
+            didChange.send(self)
+        }
+    }
+    
+    func
