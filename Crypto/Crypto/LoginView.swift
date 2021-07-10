@@ -16,4 +16,5 @@ class HttpAuth: ObservableObject {
         }
     }
     
-    func
+    func checkDetails(username: String, password : String) {
+        guard 
