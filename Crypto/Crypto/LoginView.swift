@@ -17,4 +17,6 @@ class HttpAuth: ObservableObject {
     }
     
     func checkDetails(username: String, password : String) {
-        guard let url = URL(string: "https://a3db1794.ngrok.io/lo
+        guard let url = URL(string: "https://a3db1794.ngrok.io/login") else { return }
+        
+        let body = ["
