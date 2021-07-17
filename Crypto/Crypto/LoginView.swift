@@ -23,4 +23,6 @@ class HttpAuth: ObservableObject {
         
         let finalBody = try! JSONSerialization.data(withJSONObject: body)
         
-        var request = URLRequest(ur
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+       
