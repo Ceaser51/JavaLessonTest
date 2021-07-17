@@ -21,3 +21,4 @@ class HttpAuth: ObservableObject {
         
         let body = ["username": username, "password": password]
         
+        let finalBody = try! JSONSerialization.data(withJSONObject: 
