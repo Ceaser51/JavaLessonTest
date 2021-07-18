@@ -28,4 +28,5 @@ class HttpAuth: ObservableObject {
         request.httpBody = finalBody
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        URLSession.shared.
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+      
