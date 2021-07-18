@@ -26,4 +26,4 @@ class HttpAuth: ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = finalBody
-        request.set
+        request.setValue("application/json", forHTTPHeaderField: "Con
