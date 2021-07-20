@@ -31,4 +31,5 @@ class HttpAuth: ObservableObject {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             
-            let finalData = try? JSONDecod
+            let finalData = try? JSONDecoder().decode(ServerMessage.self, from: data)
+ 
