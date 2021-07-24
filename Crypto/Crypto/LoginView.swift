@@ -32,4 +32,5 @@ class HttpAuth: ObservableObject {
             guard let data = data else { return }
             
             let finalData = try? JSONDecoder().decode(ServerMessage.self, from: data)
- 
+            
+            if finalData?.status == "o
