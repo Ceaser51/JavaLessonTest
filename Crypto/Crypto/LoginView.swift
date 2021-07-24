@@ -33,4 +33,6 @@ class HttpAuth: ObservableObject {
             
             let finalData = try? JSONDecoder().decode(ServerMessage.self, from: data)
             
-            if finalData?.status == "o
+            if finalData?.status == "ok" {
+                DispatchQueue.main.async {
+     
