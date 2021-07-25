@@ -44,4 +44,6 @@ class HttpAuth: ObservableObject {
 
 struct RootView: View {
 
-    @State private
+    @State private var manager = HttpAuth()
+    
+    var body: some Vi
