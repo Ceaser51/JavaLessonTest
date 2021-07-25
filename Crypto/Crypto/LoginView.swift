@@ -48,4 +48,6 @@ struct RootView: View {
     
     var body: some View {
         VStack {
-            if manager.au
+            if manager.authenticated {
+                ContentView()
+     
