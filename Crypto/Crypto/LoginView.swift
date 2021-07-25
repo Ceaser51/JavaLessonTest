@@ -46,4 +46,6 @@ struct RootView: View {
 
     @State private var manager = HttpAuth()
     
-    var body: some Vi
+    var body: some View {
+        VStack {
+            if manager.au
