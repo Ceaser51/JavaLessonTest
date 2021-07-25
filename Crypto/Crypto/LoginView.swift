@@ -39,4 +39,9 @@ class HttpAuth: ObservableObject {
                 }
             }
         }.resume()
-  
+    }
+}
+
+struct RootView: View {
+
+    @State private
