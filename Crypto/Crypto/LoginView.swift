@@ -50,4 +50,5 @@ struct RootView: View {
         VStack {
             if manager.authenticated {
                 ContentView()
-     
+            } else {
+                LoginView(manager: $mana
