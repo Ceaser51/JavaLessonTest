@@ -51,4 +51,10 @@ struct RootView: View {
             if manager.authenticated {
                 ContentView()
             } else {
-                LoginView(manager: $mana
+                LoginView(manager: $manager)
+            }
+        }
+    }
+}
+
+struct LoginView: Vi
