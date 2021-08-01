@@ -57,4 +57,6 @@ struct RootView: View {
     }
 }
 
-struct LoginView: Vi
+struct LoginView: View {
+    
+    @State private var username: String = ""
