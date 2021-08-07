@@ -66,4 +66,6 @@ struct LoginView: View {
     
     var body: some View {
         NavigationView {
-     
+            Form {
+
+                TextField("username", tex
