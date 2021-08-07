@@ -64,4 +64,6 @@ struct LoginView: View {
     
     @Binding var manager: HttpAuth
     
-    v
+    var body: some View {
+        NavigationView {
+     
