@@ -68,4 +68,5 @@ struct LoginView: View {
         NavigationView {
             Form {
 
-                TextField("username", tex
+                TextField("username", text: $username)
+                    .textFie
