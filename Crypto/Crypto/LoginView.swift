@@ -78,4 +78,5 @@ struct LoginView: View {
                 
                 HStack {
                     Spacer()
-        
+                    Button(action: {
+                        self.ma
