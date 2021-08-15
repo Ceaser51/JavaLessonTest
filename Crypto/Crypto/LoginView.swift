@@ -76,4 +76,6 @@ struct LoginView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
                 
-    
+                HStack {
+                    Spacer()
+        
