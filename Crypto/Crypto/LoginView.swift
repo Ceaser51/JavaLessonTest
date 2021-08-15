@@ -74,4 +74,6 @@ struct LoginView: View {
                 
                 SecureField("password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            
+                    .multilineTextAlignment(.center)
+                
+    
