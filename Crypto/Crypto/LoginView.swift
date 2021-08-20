@@ -79,4 +79,6 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        self.manager.checkDetails(username: self.username, passwo
+                        self.manager.checkDetails(username: self.username, password: self.password)
+                    }) {
+        
