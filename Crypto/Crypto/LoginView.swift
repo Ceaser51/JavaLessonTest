@@ -81,4 +81,5 @@ struct LoginView: View {
                     Button(action: {
                         self.manager.checkDetails(username: self.username, password: self.password)
                     }) {
-        
+                        Text("Login")
+                     
