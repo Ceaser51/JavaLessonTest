@@ -82,4 +82,5 @@ struct LoginView: View {
                         self.manager.checkDetails(username: self.username, password: self.password)
                     }) {
                         Text("Login")
-                     
+                        .fontWeight(.medium)
+                        .
