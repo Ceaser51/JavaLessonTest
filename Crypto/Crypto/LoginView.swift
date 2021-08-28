@@ -83,4 +83,5 @@ struct LoginView: View {
                     }) {
                         Text("Login")
                         .fontWeight(.medium)
-                        .
+                        .foregroundColor(Color.black)
+                        .paddi
