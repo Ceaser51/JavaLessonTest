@@ -85,4 +85,5 @@ struct LoginView: View {
                         .fontWeight(.medium)
                         .foregroundColor(Color.black)
                         .padding([.trailing, .leading], 15)
-               
+                        .padding([.top, .bottom], 8)
+      
