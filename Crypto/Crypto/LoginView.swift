@@ -91,4 +91,5 @@ struct LoginView: View {
                     }
                     Spacer()
                 }
-            }.naviga
+            }.navigationBarTitle("Crypto", displayMode: .automatic)
+       
