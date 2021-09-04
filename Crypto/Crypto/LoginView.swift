@@ -92,4 +92,8 @@ struct LoginView: View {
                     Spacer()
                 }
             }.navigationBarTitle("Crypto", displayMode: .automatic)
-       
+        }
+
+    }
+}
+
