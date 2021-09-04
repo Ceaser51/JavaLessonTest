@@ -89,4 +89,6 @@ struct LoginView: View {
                         .background(Color.yellow)
                         .cornerRadius(7)
                     }
-             
+                    Spacer()
+                }
+            }.naviga
