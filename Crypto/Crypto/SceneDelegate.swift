@@ -1,4 +1,6 @@
 import UIKit
 import SwiftUI
 
-class
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var w
