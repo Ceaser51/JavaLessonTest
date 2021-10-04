@@ -15,4 +15,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = ContentView()
 
         // Use a UIHostingController as window root view controller.
-        if let wind
+        if let windowScene = scene as? UIWindowScene {
+            le
