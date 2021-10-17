@@ -23,4 +23,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
-    func sceneDidDisconnect(_ scene: UI
+    func sceneDidDisconnect(_ scene: UIScene) {
+        // Called as the scene is being re
