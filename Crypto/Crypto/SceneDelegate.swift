@@ -30,4 +30,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
 
-    func sceneDidBec
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        // Called when the s
