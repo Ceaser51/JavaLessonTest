@@ -35,4 +35,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
 
-    func sceneWillResignAct
+    func sceneWillResignActive(_ scene: UIScene) {
+        // Called whe
