@@ -28,3 +28,44 @@
 		3430259823800C8400D52C58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3430259B23800C8400D52C58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3430259D23800C8400D52C58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3491FB10238417AE00619054 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		3491FB12238417ED00619054 /* LineChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartController.swift; sourceTree = "<group>"; };
+		349C7FB4238BFBFC00BF2F08 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3430258923800C8100D52C58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3430258323800C8100D52C58 = {
+			isa = PBXGroup;
+			children = (
+				3430258E23800C8100D52C58 /* Crypto */,
+				3430258D23800C8100D52C58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3430258D23800C8100D52C58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3430258C23800C8100D52C58 /* Crypto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3430258E23800C8100D52C58 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				3430258F23800C8100D52C58 /* AppDelegate.swift */,
+				3430259123800C8100D52C58 /* SceneDelegate.swift */,
+				3430259323800C8100D52C58 /* ContentView.swift */,
+				3430259523800C8400D52C58 /* Assets.xcassets */,
+				3430259A23800C8400D52C58 /* LaunchScreen.storyboard */,
+				3430259D23800C8400D52C58 /* Info.plist */,
