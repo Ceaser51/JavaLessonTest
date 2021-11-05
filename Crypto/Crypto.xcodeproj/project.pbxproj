@@ -69,3 +69,62 @@
 				3430259523800C8400D52C58 /* Assets.xcassets */,
 				3430259A23800C8400D52C58 /* LaunchScreen.storyboard */,
 				3430259D23800C8400D52C58 /* Info.plist */,
+				3491FB10238417AE00619054 /* LineChart.swift */,
+				3491FB12238417ED00619054 /* LineChartController.swift */,
+				3430259723800C8400D52C58 /* Preview Content */,
+				349C7FB4238BFBFC00BF2F08 /* LoginView.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		3430259723800C8400D52C58 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3430259823800C8400D52C58 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3430258B23800C8100D52C58 /* Crypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343025A023800C8400D52C58 /* Build configuration list for PBXNativeTarget "Crypto" */;
+			buildPhases = (
+				3430258823800C8100D52C58 /* Sources */,
+				3430258923800C8100D52C58 /* Frameworks */,
+				3430258A23800C8100D52C58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Crypto;
+			productName = Crypto;
+			productReference = 3430258C23800C8100D52C58 /* Crypto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3430258423800C8100D52C58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = TLabs;
+				TargetAttributes = {
+					3430258B23800C8100D52C58 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = 3430258723800C8100D52C58 /* Build configuration list for PBXProject "Crypto" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
