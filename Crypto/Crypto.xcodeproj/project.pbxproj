@@ -128,3 +128,51 @@
 				en,
 				Base,
 			);
+			mainGroup = 3430258323800C8100D52C58;
+			productRefGroup = 3430258D23800C8100D52C58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3430258B23800C8100D52C58 /* Crypto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3430258A23800C8100D52C58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3430259C23800C8400D52C58 /* LaunchScreen.storyboard in Resources */,
+				3430259923800C8400D52C58 /* Preview Assets.xcassets in Resources */,
+				3430259623800C8400D52C58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3430258823800C8100D52C58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349C7FB5238BFBFC00BF2F08 /* LoginView.swift in Sources */,
+				3491FB11238417AE00619054 /* LineChart.swift in Sources */,
+				3430259023800C8100D52C58 /* AppDelegate.swift in Sources */,
+				3430259223800C8100D52C58 /* SceneDelegate.swift in Sources */,
+				3430259423800C8100D52C58 /* ContentView.swift in Sources */,
+				3491FB13238417ED00619054 /* LineChartController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3430259A23800C8400D52C58 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3430259B23800C8400D52C58 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
