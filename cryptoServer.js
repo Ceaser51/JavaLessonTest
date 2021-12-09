@@ -3,4 +3,6 @@ const app = express();
 const port = 8080;
 const bodyParser = require('body-parser')
 
-var urlencodedParse
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+app.ge
