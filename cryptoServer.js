@@ -5,4 +5,6 @@ const bodyParser = require('body-parser')
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.ge
+app.get('/', (req, res) => {
+    res.send(`Hello World !!`)
+}
