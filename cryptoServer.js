@@ -13,3 +13,5 @@ app.post('/login', urlencodedParser, function (req, res) {
     const  { username ,password } = req.body 
 
     if (username === 'admin' && password === 'admin') {
+        return res.json({
+            'status':  'ok'
