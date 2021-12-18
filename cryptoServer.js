@@ -20,4 +20,7 @@ app.post('/login', urlencodedParser, function (req, res) {
     } else {
         return res.json({ 
             'status': 'error',
-            'message': 'Inco
+            'message': 'Incorrect username or password'
+        })
+    }
+})
