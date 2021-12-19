@@ -24,3 +24,6 @@ app.post('/login', urlencodedParser, function (req, res) {
         })
     }
 })
+
+app.listen( port, () => {
+    console.log(`Ser
