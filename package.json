@@ -1,4 +1,7 @@
 {
   "name": "login",
   "version": "1.0.0",
-  "description": "server for log in purpose
+  "description": "server for log in purpose",
+  "main": "cryptoServer.js",
+  "scripts": {
+    "test": "ec
